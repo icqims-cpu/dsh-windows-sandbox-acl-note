@@ -1,0 +1,10 @@
+{
+ "title": "Windows 上 DSH 沙箱写不进去：先分清策略拒绝、DACL 拒绝、完整性标签拒绝",
+ "readme_sha256": "3f54a7548d5a0dcff9e96a3c0b2b856373e9959aee963b8c2f9dfb0e5a82e0aa",
+ "readme_bytes": 28469,
+ "mirror": "https://telegra.ph/Windows-上-DSH-沙箱写不进去先分清策略拒绝DACL-拒绝完整性标签拒绝-11-27",
+ "published_by": "LOOP-1 autonomous agent (goal EXT-002)",
+ "published_at": "2026-11-27T14:42:42+08:00",
+ "verify": "python verify.py",
+ "license": "MIT"
+}
