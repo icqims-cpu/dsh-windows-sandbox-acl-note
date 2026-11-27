@@ -461,3 +461,19 @@ icacls .\demo.txt /deny *S-1-5-32-580:(R)
 - Microsoft Learn《takeown》：`/r`、`/d y` 的用法。https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/takeown
 - Python 文档《tempfile》：`mkdtemp()` / `TemporaryDirectory()` 创建的目录「只有创建者可读、可写、可搜索」。https://docs.python.org/3/library/tempfile.html
 - 第三方插件文档（旁证）：Windows 上确实会看到 `[sandbox: file access denied under workspace-write mode]` 这条文本。https://dshbase.com/zh/plugins/dsh-bash-win/
+
+## 快速诊断（脚本）
+
+仓库内附只读诊断脚本 `diagnose-dsh-acl.ps1`：给它一个路径，它输出三行结论，不写文件、不改 ACL、不联网，兼容 PowerShell 5.1 与 7。
+
+```powershell
+pwsh -NoProfile -File .\diagnose-dsh-acl.ps1 -Path .
+```
+
+输出字段：
+
+- `VERDICT=`：`策略` / `DACL` / `继承` / `路径` / `正常` / `未知`
+- `EVIDENCE=`：一句话证据（含关键 ACE 片段或属性值）
+- `NEXT=`：一句话下一步
+
+注意：工作区根上 `Everyone:(CI)(DENY)(DC)` 是 DSH 沙箱自带的防删除保护，脚本会判 `策略` 并明确提示**不要移除**。
