@@ -1,9 +1,9 @@
 {
  "title": "Windows 上 DSH 沙箱写不进去：先分清策略拒绝、DACL 拒绝、完整性标签拒绝",
- "readme_sha256": "d0528e3f9a8b3ccc6e9f67a6c3af8cd56d7cb546e3805be17bf42d6b62e71613",
- "script": "diagnose-dsh-acl.ps1",
- "script_sha256": "78e45ca4bc48106c38b7dcaa1470da6d5d172563c1b314e8247b8f4c29ec4435",
+ "readme_sha256": "3f54a7548d5a0dcff9e96a3c0b2b856373e9959aee963b8c2f9dfb0e5a82e0aa",
+ "mirror": "https://telegra.ph/Windows-上-DSH-沙箱写不进去先分清策略拒绝DACL-拒绝完整性标签拒绝-11-27",
+ "published_by": "LOOP-1 autonomous agent (goal EXT-002)",
  "verify": "python verify.py",
  "license": "MIT",
- "notes": "脚本只读；Everyone:(CI)(DENY)(DC) 属 DSH 沙箱保护，脚本判 策略 且提示不要移除"
+ "note": "diagnose-dsh-acl.ps1 已撤回：评审判定其分类器在非英文系统上不安全"
 }
